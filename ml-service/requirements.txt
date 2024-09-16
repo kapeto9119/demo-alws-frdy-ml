@@ -5,3 +5,4 @@ numpy
 python-dotenv
 loguru
 pydantic
+pytest
