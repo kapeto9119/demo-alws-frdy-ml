@@ -10,6 +10,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ml-service
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
