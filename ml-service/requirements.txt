@@ -4,5 +4,5 @@ opencv-python
 numpy
 python-dotenv
 loguru
-pydantic
+pydantic_settings
 pytest
