@@ -1,0 +1,246 @@
+2024-09-14 18:45:32.800 | ERROR    | app.services.face_detection:detect_faces_in_image:16 - Image decoding failed
+2024-09-14 18:46:42.011 | ERROR    | app.services.face_detection:detect_faces_in_image:16 - Image decoding failed
+2024-09-14 18:46:42.045 | ERROR    | app.services.face_detection:detect_faces_in_image:52 - Error in face detection
+Traceback (most recent call last):
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <zipimporter object "C:\Users\nicoc\AppData\Local\...
+           │         └ <code object <module> at 0x000002DE4D66C660, file "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\Scripts\pytest.exe\...
+           └ <function _run_code at 0x000002DE4D64E9E0>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <zipimporter object "C:\Users\nicoc\AppData\Local\...
+         └ <code object <module> at 0x000002DE4D66C660, file "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\Scripts\pytest.exe\...
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\Scripts\pytest.exe\__main__.py", line 7, in <module>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\config\__init__.py", line 201, in console_main
+    code = main()
+           └ <function main at 0x000002DE4DD739A0>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\config\__init__.py", line 175, in main
+    ret: ExitCode | int = config.hook.pytest_cmdline_main(config=config)
+         │                │      │    │                          └ <_pytest.config.Config object at 0x000002DE4E420F40>
+         │                │      │    └ <HookCaller 'pytest_cmdline_main'>
+         │                │      └ <_pytest.config.compat.PathAwareHookProxy object at 0x000002DE4E421660>
+         │                └ <_pytest.config.Config object at 0x000002DE4E420F40>
+         └ <enum 'ExitCode'>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           │    │         │    │     │    │                  │       └ True
+           │    │         │    │     │    │                  └ {'config': <_pytest.config.Config object at 0x000002DE4E420F40>}
+           │    │         │    │     │    └ <member '_hookimpls' of 'HookCaller' objects>
+           │    │         │    │     └ <HookCaller 'pytest_cmdline_main'>
+           │    │         │    └ <member 'name' of 'HookCaller' objects>
+           │    │         └ <HookCaller 'pytest_cmdline_main'>
+           │    └ <member '_hookexec' of 'HookCaller' objects>
+           └ <HookCaller 'pytest_cmdline_main'>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ True
+           │    │               │          │        └ {'config': <_pytest.config.Config object at 0x000002DE4E420F40>}
+           │    │               │          └ [<HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\nicoc\\AppData\\Local\\Programs\\Python\\Python...
+           │    │               └ 'pytest_cmdline_main'
+           │    └ <function _multicall at 0x000002DE4D8168C0>
+           └ <_pytest.config.PytestPluginManager object at 0x000002DE4D6A5BA0>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<_pytest.config.Config object at 0x000002DE4E420F40>]
+          │         └ <member 'function' of 'HookImpl' objects>
+          └ <HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\nicoc\\AppData\\Local\\Programs\\Python\\Python3...
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\main.py", line 330, in pytest_cmdline_main
+    return wrap_session(config, _main)
+           │            │       └ <function _main at 0x000002DE4DE13130>
+           │            └ <_pytest.config.Config object at 0x000002DE4E420F40>
+           └ <function wrap_session at 0x000002DE4DE13010>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\main.py", line 283, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+    │       │            │    │       └ <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=3>
+    │       │            │    └ <_pytest.config.Config object at 0x000002DE4E420F40>
+    │       │            └ <function _main at 0x000002DE4DE13130>
+    │       └ <ExitCode.OK: 0>
+    └ <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=3>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\main.py", line 337, in _main
+    config.hook.pytest_runtestloop(session=session)
+    │      │    │                          └ <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=3>
+    │      │    └ <HookCaller 'pytest_runtestloop'>
+    │      └ <_pytest.config.compat.PathAwareHookProxy object at 0x000002DE4E421660>
+    └ <_pytest.config.Config object at 0x000002DE4E420F40>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           │    │         │    │     │    │                  │       └ True
+           │    │         │    │     │    │                  └ {'session': <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=3>}
+           │    │         │    │     │    └ <member '_hookimpls' of 'HookCaller' objects>
+           │    │         │    │     └ <HookCaller 'pytest_runtestloop'>
+           │    │         │    └ <member 'name' of 'HookCaller' objects>
+           │    │         └ <HookCaller 'pytest_runtestloop'>
+           │    └ <member '_hookexec' of 'HookCaller' objects>
+           └ <HookCaller 'pytest_runtestloop'>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ True
+           │    │               │          │        └ {'session': <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=3>}
+           │    │               │          └ [<HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\nicoc\\AppData\\Local\\Programs\\Python\\Python...
+           │    │               └ 'pytest_runtestloop'
+           │    └ <function _multicall at 0x000002DE4D8168C0>
+           └ <_pytest.config.PytestPluginManager object at 0x000002DE4D6A5BA0>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=3>]
+          │         └ <member 'function' of 'HookImpl' objects>
+          └ <HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\nicoc\\AppData\\Local\\Programs\\Python\\Python3...
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\main.py", line 362, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+    │    │                                        │              └ None
+    │    │                                        └ <Function test_detect_faces_in_image_with_invalid_parameters>
+    │    └ <member 'config' of 'Node' objects>
+    └ <Function test_detect_faces_in_image_with_invalid_parameters>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           │    │         │    │     │    │                  │       └ True
+           │    │         │    │     │    │                  └ {'item': <Function test_detect_faces_in_image_with_invalid_parameters>, 'nextitem': None}
+           │    │         │    │     │    └ <member '_hookimpls' of 'HookCaller' objects>
+           │    │         │    │     └ <HookCaller 'pytest_runtest_protocol'>
+           │    │         │    └ <member 'name' of 'HookCaller' objects>
+           │    │         └ <HookCaller 'pytest_runtest_protocol'>
+           │    └ <member '_hookexec' of 'HookCaller' objects>
+           └ <HookCaller 'pytest_runtest_protocol'>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ True
+           │    │               │          │        └ {'item': <Function test_detect_faces_in_image_with_invalid_parameters>, 'nextitem': None}
+           │    │               │          └ [<HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\nicoc\\AppData\\Local\\Programs\\Python\\Py...
+           │    │               └ 'pytest_runtest_protocol'
+           │    └ <function _multicall at 0x000002DE4D8168C0>
+           └ <_pytest.config.PytestPluginManager object at 0x000002DE4D6A5BA0>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<Function test_detect_faces_in_image_with_invalid_parameters>, None]
+          │         └ <member 'function' of 'HookImpl' objects>
+          └ <HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\nicoc\\AppData\\Local\\Programs\\Python\\Pyt...
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\runner.py", line 113, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+    │               │              └ None
+    │               └ <Function test_detect_faces_in_image_with_invalid_parameters>
+    └ <function runtestprotocol at 0x000002DE4DE123B0>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\runner.py", line 132, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+    │       │      │               │             └ True
+    │       │      │               └ <Function test_detect_faces_in_image_with_invalid_parameters>
+    │       │      └ <function call_and_report at 0x000002DE4DE127A0>
+    │       └ <method 'append' of 'list' objects>
+    └ [<TestReport 'tests/test_face_detection.py::test_detect_faces_in_image_with_invalid_parameters' when='setup' outcome='passed'>]
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\runner.py", line 241, in call_and_report
+    call = CallInfo.from_call(
+           │        └ <classmethod(<function CallInfo.from_call at 0x000002DE4DE12A70>)>
+           └ <class '_pytest.runner.CallInfo'>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\runner.py", line 341, in from_call
+    result: TResult | None = func()
+            │                └ <function call_and_report.<locals>.<lambda> at 0x000002DE5001D6C0>
+            └ +TResult
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\runner.py", line 242, in <lambda>
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+            │                 │       └ {}
+            │                 └ <Function test_detect_faces_in_image_with_invalid_parameters>
+            └ <HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           │    │         │    │     │    │                  │       └ False
+           │    │         │    │     │    │                  └ {'item': <Function test_detect_faces_in_image_with_invalid_parameters>}
+           │    │         │    │     │    └ <member '_hookimpls' of 'HookCaller' objects>
+           │    │         │    │     └ <HookCaller 'pytest_runtest_call'>
+           │    │         │    └ <member 'name' of 'HookCaller' objects>
+           │    │         └ <HookCaller 'pytest_runtest_call'>
+           │    └ <member '_hookexec' of 'HookCaller' objects>
+           └ <HookCaller 'pytest_runtest_call'>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ False
+           │    │               │          │        └ {'item': <Function test_detect_faces_in_image_with_invalid_parameters>}
+           │    │               │          └ [<HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\nicoc\\AppData\\Local\\Programs\\Python\\Py...
+           │    │               └ 'pytest_runtest_call'
+           │    └ <function _multicall at 0x000002DE4D8168C0>
+           └ <_pytest.config.PytestPluginManager object at 0x000002DE4D6A5BA0>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<Function test_detect_faces_in_image_with_invalid_parameters>]
+          │         └ <member 'function' of 'HookImpl' objects>
+          └ <HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\nicoc\\AppData\\Local\\Programs\\Python\\Pyt...
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\runner.py", line 174, in pytest_runtest_call
+    item.runtest()
+    │    └ <function Function.runtest at 0x000002DE4DF2FD90>
+    └ <Function test_detect_faces_in_image_with_invalid_parameters>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\python.py", line 1627, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+    │    │                                   └ <Function test_detect_faces_in_image_with_invalid_parameters>
+    │    └ <property object at 0x000002DE4DDBA160>
+    └ <Function test_detect_faces_in_image_with_invalid_parameters>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           │    │         │    │     │    │                  │       └ True
+           │    │         │    │     │    │                  └ {'pyfuncitem': <Function test_detect_faces_in_image_with_invalid_parameters>}
+           │    │         │    │     │    └ <member '_hookimpls' of 'HookCaller' objects>
+           │    │         │    │     └ <HookCaller 'pytest_pyfunc_call'>
+           │    │         │    └ <member 'name' of 'HookCaller' objects>
+           │    │         └ <HookCaller 'pytest_pyfunc_call'>
+           │    └ <member '_hookexec' of 'HookCaller' objects>
+           └ <HookCaller 'pytest_pyfunc_call'>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ True
+           │    │               │          │        └ {'pyfuncitem': <Function test_detect_faces_in_image_with_invalid_parameters>}
+           │    │               │          └ [<HookImpl plugin_name='python', plugin=<module '_pytest.python' from 'C:\\Users\\nicoc\\AppData\\Local\\Programs\\Python\\Py...
+           │    │               └ 'pytest_pyfunc_call'
+           │    └ <function _multicall at 0x000002DE4D8168C0>
+           └ <_pytest.config.PytestPluginManager object at 0x000002DE4D6A5BA0>
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<Function test_detect_faces_in_image_with_invalid_parameters>]
+          │         └ <member 'function' of 'HookImpl' objects>
+          └ <HookImpl plugin_name='python', plugin=<module '_pytest.python' from 'C:\\Users\\nicoc\\AppData\\Local\\Programs\\Python\\Pyt...
+
+  File "C:\Users\nicoc\AppData\Local\Programs\Python\Python310\lib\site-packages\_pytest\python.py", line 159, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+             │              └ {}
+             └ <function test_detect_faces_in_image_with_invalid_parameters at 0x000002DE5C0CDD80>
+
+  File "Z:\Docs\Always Friday Interview\Code\demo-alws-frdy-ml\ml-service\tests\test_face_detection.py", line 25, in test_detect_faces_in_image_with_invalid_parameters
+    result = detect_faces_in_image(image_bytes, 0.5, -1)
+             │                     └ b'\xff\xd8\xff\xe0\x00\x10JFIF\x00\x01\x01\x00\x00H\x00H\x00\x00\xff\xe1\x068Exif\x00\x00MM\x00*\x00\x00\x00\x08\x00\x08\x01\...
+             └ <function detect_faces_in_image at 0x000002DE5001F7F0>
+
+> File "Z:\Docs\Always Friday Interview\Code\demo-alws-frdy-ml\ml-service\app\services\face_detection.py", line 36, in detect_faces_in_image
+    faces = face_cascade.detectMultiScale(
+            │            └ <method 'detectMultiScale' of 'cv2.CascadeClassifier' objects>
+            └ < cv2.CascadeClassifier 000002DE5AF5E070>
+
+cv2.error: OpenCV(4.9.0) D:\a\opencv-python\opencv-python\opencv\modules\objdetect\src\cascadedetect.cpp:1389: error: (-215:Assertion failed) scaleFactor > 1 && _image.depth() == CV_8U in function 'cv::CascadeClassifierImpl::detectMultiScale'
+
