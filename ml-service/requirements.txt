@@ -6,3 +6,4 @@ python-dotenv
 loguru
 pydantic_settings
 pytest
+python-multipart
