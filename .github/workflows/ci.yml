@@ -54,5 +54,6 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/ml-service:latest
             docker stop ml-service || true
             docker rm ml-service || true
+            docker rmi $(docker images -q ${{ secrets.DOCKER_USERNAME }}/ml-service) || true
             docker run --name ml-service --network demo-always-friday-network -p 8000:8000 -d ${{ secrets.DOCKER_USERNAME }}/ml-service:latest
           EOF
