@@ -1,26 +1,32 @@
-# Usa una imagen base de Python
+# Use the official Python image from the Docker Hub
 FROM python:3.9-slim
 
-# Instalar las dependencias del sistema necesarias para OpenCV
+# Install system dependencies
+# libgl1-mesa-glx is required for matplotlib
+# libglib2.0-0 is required for pyarrow
+# libheif-examples and libheif-dev are required for pyheif
+# rm -rf /var/lib/apt/lists/* is used to clean up the package manager cache
 RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
     libglib2.0-0 \
+    libheif-examples \
+    libheif-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Establecer directorio de trabajo dentro del contenedor
+# Establish the working directory
 WORKDIR /app
 
-# Copiar el archivo de dependencias
+# Copy the requirements file
 COPY requirements.txt .
 
-# Instalar las dependencias de Python
+# Install the Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar el resto del código de la aplicación
+# Copy the rest of the application
 COPY . .
 
-# Exponer el puerto en el que FastAPI se ejecutará
+# Expose the port that the app runs on
 EXPOSE 8000
 
-# Comando para iniciar FastAPI
+# FastAPI runs on port 8000 by default
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

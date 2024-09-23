@@ -7,3 +7,5 @@ loguru
 pydantic_settings
 pytest
 python-multipart
+pyheif
+Pillow

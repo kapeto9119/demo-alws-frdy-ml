@@ -2,6 +2,9 @@ from fastapi import APIRouter, File, UploadFile, Form, HTTPException
 from fastapi.responses import Response
 from app.services.face_detection import detect_faces_in_image
 from app.utils.logger import logger
+import pyheif
+from PIL import Image
+import io
 
 router = APIRouter(
     prefix="/process",
@@ -28,19 +31,20 @@ async def process_image(
         if not image.content_type.startswith("image/"):
             raise HTTPException(status_code=400, detail="Invalid image file")
 
-        if not (1.0 <= scale_factor <= 2.0):
-            raise HTTPException(
-                status_code=400,
-                detail="scale_factor must be between 1.0 and 2.0",
-            )
-
-        if not (1 <= min_neighbors <= 10):
-            raise HTTPException(
-                status_code=400,
-                detail="min_neighbors must be between 1 and 10",
-            )
-
+        # Soporte para HEIC/HEIF
         contents = await image.read()
+        if image.content_type in ["image/heic", "image/heif"]:
+            heif_file = pyheif.read_heif(contents)
+            image_pil = Image.frombytes(
+                heif_file.mode, heif_file.size, heif_file.data, "raw", heif_file.stride
+            )
+
+            # Convertir a JPEG
+            img_byte_arr = io.BytesIO()
+            image_pil.save(img_byte_arr, format='JPEG')
+            contents = img_byte_arr.getvalue()
+
+        # Procesar la imagen (JPEG o convertida)
         processed_image = detect_faces_in_image(contents, scale_factor, min_neighbors)
 
         if processed_image is None:
